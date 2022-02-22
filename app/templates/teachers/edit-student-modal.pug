@@ -14,7 +14,7 @@ block modal-body-content
     .license-details
       strong(data-i18n="teacher.license_status")
       span.spr :
-      if status == "not-enrolled"
+      if status === "not-enrolled"
         .small-details
           span(data-i18n="teacher.status_not_enrolled")
       else
@@ -26,7 +26,7 @@ block modal-body-content
           else
             span.spr=prepaidType
           span (
-          span(class= status === 'expired' ? 'text-danger' : '')= view.studentStatusString()
+          span(class=(status === 'expired' ? 'text-danger' : ''))= view.studentStatusString()
           span )
       if status !== 'enrolled' && me.canManageLicensesViaUI()
         .small-details
